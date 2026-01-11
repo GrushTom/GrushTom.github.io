@@ -41,13 +41,13 @@ export const commentConfig: CommentConfig = {
 	//giscus评论系统配置
 	giscus: {
 		// 设置 Giscus 评论系统仓库
-		repo: "GrushTom/Firefly",
+		repo: "GrushTom/GrushTom.github.io",
 		// 设置 Giscus 评论系统仓库ID
-		repoId: "R_kgDOQ3L0Uw",
+		repoId: "R_kgDOQ35J3g",
 		// 设置 Giscus 评论系统分类
 		category: "General",
 		// 获取 Giscus 评论系统分类ID
-		categoryId: "DIC_kwDOQ3L0U84C01L_",
+		categoryId: "DIC_kwDOQ35J3s4C01e_",
 		// 获取 Giscus 评论系统映射方式
 		mapping: "title",
 		// 获取 Giscus 评论系统严格模式
