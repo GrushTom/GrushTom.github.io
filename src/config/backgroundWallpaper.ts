@@ -24,7 +24,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "Lovely GrushTom!",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
@@ -35,6 +35,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 				"Upon Lighted Fyrefly, I Soon Gaze",
 				"From Undreamt Night, I Thence Shine",
 				"In Finalized Morrow, I Full Bloom",
+				"何尝需要众望所归的期盼，不过烟雨"
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
