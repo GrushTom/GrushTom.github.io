@@ -1,4 +1,306 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>GrushTomの部屋</title><description>Firefly</description><link>https://grushtom.github.io/</link><language>zh_CN</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年1月12日 11:19:34</lastBuildDate><item><title>Firefly 一款清新美观的 Astro 博客主题模板</title><link>https://grushtom.github.io/posts/firefly/</link><guid isPermaLink="true">https://grushtom.github.io/posts/firefly/</guid><description>Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><pubDate>Fri, 02 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>GrushTomの部屋</title><description>Firefly</description><link>https://grushtom.github.io/</link><language>zh_CN</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年1月12日 14:42:07</lastBuildDate><item><title>Hexo+GithubPages部署博客</title><link>https://grushtom.github.io/posts/hexo/</link><guid isPermaLink="true">https://grushtom.github.io/posts/hexo/</guid><description>深入了解如何使用Hexo框架+Github Pages搭建一个属于你的个人博客，新手必看系列</description><pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;使用HEXO + Github Pages搭建个人博客&lt;/h1&gt;
+&lt;h2&gt;功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;无需服务器&lt;/li&gt;
+&lt;li&gt;免费&lt;/li&gt;
+&lt;li&gt;主题，插件很多&lt;/li&gt;
+&lt;li&gt;开源社区 Hexo用户群体多 便于讨论或提出问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Step.1&lt;/h1&gt;
+&lt;h2&gt;下载node.js，git&lt;/h2&gt;
+&lt;p&gt;此处跳过&lt;/p&gt;
+&lt;h1&gt;Step.2&lt;/h1&gt;
+&lt;h2&gt;下载Hexo并配置&lt;/h2&gt;
+&lt;p&gt;确保nodejs git安装成功后，下载Hexo &lt;a href=&quot;https://hexo.io/zh-cn/index.html&quot;&gt;Hexo官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;先创建一个新的文件夹hexo，用于存放hexo相关文件&lt;/p&gt;
+&lt;p&gt;然后根据指令，输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-cli -g #用于安装hexo 如果你有经验，可以使用 hexo库安装部分组件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;确保没有出现error报错，进行下一步&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexo init blog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这一步默认从github上下载blog资源，慢是正常的，挂梯子会更快&lt;/p&gt;
+&lt;p&gt;没有出现报错，继续下一步&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd blog #进入blog目录
+$ npm install #确保没有报错
+$ hexo server #可缩写 hexo s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;之后使用命令行中的链接打开，打开成功？&lt;/p&gt;
+&lt;p&gt;恭喜你，你成功搭建了一个属于自己的个人博客&lt;/p&gt;
+&lt;p&gt;好的。接下来让我们更近一步！&lt;/p&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87&quot;&gt;前置准备&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85&quot;&gt;环境安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%88%9B%E5%BB%BAhexo%E9%A1%B9%E7%9B%AE&quot;&gt;创建Hexo项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%85%8D%E7%BD%AEhexo&quot;&gt;配置Hexo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%85%8D%E7%BD%AEgithub-pages&quot;&gt;配置GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2&quot;&gt;部署博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&quot;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE&quot;&gt;主题配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D&quot;&gt;自定义域名&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;前置准备&lt;/h2&gt;
+&lt;h3&gt;1. 注册GitHub账号&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;访问 &lt;a href=&quot;https://github.com&quot;&gt;GitHub官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;点击&quot;Sign up&quot;注册新账号&lt;/li&gt;
+&lt;li&gt;记住用户名，将用于生成博客地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 创建GitHub仓库&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;登录GitHub后，点击右上角&quot;+&quot; → &quot;New repository&quot;&lt;/li&gt;
+&lt;li&gt;仓库名格式：&lt;code&gt;用户名.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;例如：用户名为&lt;code&gt;john&lt;/code&gt;，则仓库名为&lt;code&gt;john.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;选择&quot;Public&quot;，勾选&quot;Add a README file&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;环境安装&lt;/h2&gt;
+&lt;h3&gt;1. 安装Node.js&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# Windows/macOS用户
+# 访问 https://nodejs.org 下载LTS版本安装
+
+# Ubuntu/Debian
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 验证安装
+node -v
+npm -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 安装Git&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# Windows: 下载 https://git-scm.com/download/win
+# macOS: brew install git
+# Ubuntu/Debian: sudo apt install git
+
+# 验证安装
+git --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;3. 配置Git&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 设置用户信息
+git config --global user.name &quot;你的用户名&quot;
+git config --global user.email &quot;你的邮箱&quot;
+
+# 生成SSH密钥
+ssh-keygen -t rsa -b 4096 -C &quot;你的邮箱&quot;
+# 将公钥添加到GitHub
+cat ~/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;创建Hexo项目&lt;/h2&gt;
+&lt;h3&gt;1. 安装Hexo CLI&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 初始化博客&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 创建博客目录
+hexo init my-blog
+cd my-blog
+
+# 安装依赖
+npm install
+
+# 启动本地服务器
+hexo server
+# 访问 http://localhost:4000 查看效果
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;配置Hexo&lt;/h2&gt;
+&lt;h3&gt;1. 基本配置（_config.yml）&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# Site
+title: 你的博客标题
+subtitle: 博客副标题
+description: 博客描述
+keywords: 关键词1, 关键词2
+author: 你的名字
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+url: https://用户名.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+
+# Extensions
+theme: landscape  # 默认主题
+
+# Deployment
+deploy:
+  type: git
+  repo: https://github.com/用户名/用户名.github.io.git
+  branch: main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 安装部署插件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install hexo-deployer-git --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;配置GitHub Pages&lt;/h2&gt;
+&lt;h3&gt;1. 设置仓库&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;进入仓库设置：Settings → Pages&lt;/li&gt;
+&lt;li&gt;Source选择：Deploy from a branch&lt;/li&gt;
+&lt;li&gt;Branch选择：main&lt;/li&gt;
+&lt;li&gt;文件夹选择：/(root)&lt;/li&gt;
+&lt;li&gt;点击Save&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;2. 检查Pages状态&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;访问 &lt;code&gt;https://用户名.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;初次部署需要几分钟生效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;部署博客&lt;/h2&gt;
+&lt;h3&gt;1. 生成静态文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 清理旧文件
+hexo clean
+
+# 生成新文件
+hexo generate
+# 或简写
+hexo g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 部署到GitHub&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 部署命令
+hexo deploy
+# 或简写
+hexo d
+
+# 组合命令（常用）
+hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;3. 验证部署&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;访问 &lt;code&gt;https://用户名.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看博客是否正常显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;h3&gt;创建新文章&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;hexo new &quot;文章标题&quot;
+# 简写
+hexo n &quot;文章标题&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;创建新页面&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;hexo new page about
+# 会在source/about/index.md创建关于页面
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;本地预览&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;hexo server
+# 简写
+hexo s
+# 指定端口
+hexo s -p 8080
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;草稿功能&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 创建草稿
+hexo new draft &quot;草稿标题&quot;
+
+# 预览草稿
+hexo server --draft
+
+# 发布草稿
+hexo publish &quot;草稿标题&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;主题配置&lt;/h2&gt;
+&lt;h3&gt;1. 安装主题（以NexT为例）&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;cd my-blog
+git clone https://github.com/theme-next/hexo-theme-next themes/next
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 启用主题&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# _config.yml中修改
+theme: next
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;3. 配置主题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;复制主题配置：&lt;code&gt;cp themes/next/_config.yml _config.next.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;修改&lt;code&gt;_config.next.yml&lt;/code&gt;进行自定义配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. 推荐主题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: https://github.com/theme-next/hexo-theme-next&lt;/li&gt;
+&lt;li&gt;Butterfly: https://github.com/jerryc127/hexo-theme-butterfly&lt;/li&gt;
+&lt;li&gt;Fluid: https://github.com/fluid-dev/hexo-theme-fluid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;自定义域名&lt;/h2&gt;
+&lt;h3&gt;1. 购买域名&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;在阿里云、腾讯云等平台购买域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 添加CNAME文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 在source目录创建CNAME文件
+echo &quot;你的域名.com&quot; &amp;gt; source/CNAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;3. 配置DNS&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;记录类型：CNAME
+主机记录：www
+记录值：用户名.github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;4. 更新GitHub Pages设置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;进入仓库Settings → Pages&lt;/li&gt;
+&lt;li&gt;在Custom domain填入你的域名&lt;/li&gt;
+&lt;li&gt;勾选Enforce HTTPS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;故障排除&lt;/h2&gt;
+&lt;h3&gt;常见问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;页面404错误&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查仓库名是否正确&lt;/li&gt;
+&lt;li&gt;等待几分钟让GitHub Pages生效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;部署失败&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 检查Git配置
+git config --list
+
+# 重新安装部署插件
+npm uninstall hexo-deployer-git
+npm install hexo-deployer-git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;样式丢失&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 清理缓存重新生成
+hexo clean &amp;amp;&amp;amp; hexo g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;获取帮助&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hexo官方文档：https://hexo.io/zh-cn/docs/&lt;/li&gt;
+&lt;li&gt;GitHub Pages文档：https://docs.github.com/pages&lt;/li&gt;
+&lt;li&gt;主题文档：查看各主题的GitHub仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;后续优化建议&lt;/h2&gt;
+&lt;h3&gt;1. SEO优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;添加sitemap插件&lt;/li&gt;
+&lt;li&gt;配置robots.txt&lt;/li&gt;
+&lt;li&gt;添加Google Analytics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 功能增强&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装评论系统（评论系统类型: twikoo, waline, giscus(github discussions), disqus, artalk都很不错）&lt;/li&gt;
+&lt;li&gt;添加搜索功能&lt;/li&gt;
+&lt;li&gt;配置RSS订阅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 自动化部署&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用GitHub Actions自动部署&lt;/li&gt;
+&lt;li&gt;配置Travis CI持续集成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;提示&lt;/strong&gt;：每次修改配置后，记得运行&lt;code&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d&lt;/code&gt;重新部署。&lt;/p&gt;
+</content:encoded><author>GrushTom</author></item><item><title>Firefly 一款清新美观的 Astro 博客主题模板</title><link>https://grushtom.github.io/posts/firefly/</link><guid isPermaLink="true">https://grushtom.github.io/posts/firefly/</guid><description>Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。</description><pubDate>Fri, 02 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🌟 项目概述&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Firefly&lt;/strong&gt; 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;🖥️在线预览： &lt;a href=&quot;https://firefly.cuteleaf.cn/&quot;&gt;Firefly - Demo site&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;🏠我的博客： &lt;a href=&quot;https://blog.cuteleaf.cn/&quot;&gt;https://blog.cuteleaf.cn&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
