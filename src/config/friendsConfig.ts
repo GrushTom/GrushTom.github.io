@@ -37,6 +37,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 8,
 		enabled: true,
 	},
+	{
+		title: "二叉树树",
+		imgurl: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0",
+		desc: "二叉树树 的个人博客",
+		siteurl: "https://blog.acofork.com/",
+		tags: ["Blog"],
+		weight: 6,
+		enabled: true,
+	},
 ];
 
 // 获取启用的友链并按权重排序
