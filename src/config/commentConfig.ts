@@ -41,7 +41,7 @@ export const commentConfig: CommentConfig = {
 	//giscus评论系统配置
 	giscus: {
 		// 设置 Giscus 评论系统仓库
-		repo: "GrushTom/GrushTom.github.io",
+		repo: "GrushTom/astroGT",
 		// 设置 Giscus 评论系统仓库ID
 		repoId: "R_kgDOQ35J3g",
 		// 设置 Giscus 评论系统分类
