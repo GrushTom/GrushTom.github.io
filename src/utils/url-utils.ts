@@ -56,5 +56,9 @@ export function getFileDirFromPath(filePath: string): string {
 }
 
 export function url(path: string) {
+	// 检测是否为绝对URL
+	if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('//')) {
+		return path;
+	}
 	return joinUrl("", import.meta.env.BASE_URL, path);
 }

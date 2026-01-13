@@ -7,10 +7,24 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	switchable: true,
 	// 背景图片配置
 	src: {
-		// 桌面背景图片
-		desktop: "/assets/images/d1.webp",
-		// 移动背景图片
-		mobile: "/assets/images/m1.webp",
+		// 桌面背景图片 - 支持数组，随机选择
+		desktop: [
+			"/assets/images/d1.webp",
+			"/assets/images/1.jpg",
+			"/assets/images/2.jpg",
+			"/assets/images/3.jpg",
+			"/assets/images/4.jpg",
+			"/assets/images/5.jpg",
+			"/assets/images/6.jpg",
+			"/assets/images/7.jpg",
+			"/assets/images/8.jpg",
+			"/assets/images/9.jpg",
+			"/assets/images/10.jpg"
+		],
+		// 移动背景图片 - 支持数组，随机选择
+		mobile: [
+			"/assets/images/m1.webp",
+		],
 	},
 	// Banner模式特有配置
 	banner: {

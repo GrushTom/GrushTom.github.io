@@ -14,9 +14,20 @@ export const getBackgroundImages = () => {
 			desktop?: string | string[];
 			mobile?: string | string[];
 		};
+		
+		// 处理图片源，支持字符串和数组
+		const processImage = (img: string | string[] | undefined): string => {
+			if (!img) return "";
+			if (Array.isArray(img)) {
+				// 随机选择一个图片
+				return img[Math.floor(Math.random() * img.length)];
+			}
+			return img;
+		};
+		
 		return {
-			desktop: srcObj.desktop || srcObj.mobile || "",
-			mobile: srcObj.mobile || srcObj.desktop || "",
+			desktop: processImage(srcObj.desktop) || processImage(srcObj.mobile) || "",
+			mobile: processImage(srcObj.mobile) || processImage(srcObj.desktop) || "",
 		};
 	}
 	// 如果是字符串，同时用于桌面端和移动端
@@ -49,12 +60,21 @@ export const getDefaultBackground = (): string => {
 	}
 	if (src && typeof src === "object" && !Array.isArray(src)) {
 		// 优先使用desktop，如果没有则使用mobile
-		const desktopSrc = src.desktop;
-		const mobileSrc = src.mobile;
-		if (typeof desktopSrc === "string") {
+		const processImage = (img: string | string[] | undefined): string => {
+			if (!img) return "";
+			if (Array.isArray(img)) {
+				// 随机选择一个图片
+				return img[Math.floor(Math.random() * img.length)];
+			}
+			return img;
+		};
+		
+		const desktopSrc = processImage(src.desktop);
+		const mobileSrc = processImage(src.mobile);
+		if (desktopSrc) {
 			return desktopSrc;
 		}
-		if (typeof mobileSrc === "string") {
+		if (mobileSrc) {
 			return mobileSrc;
 		}
 	}
