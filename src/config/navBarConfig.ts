@@ -38,6 +38,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				external: true,
 				icon: "fa6-brands:bilibili",
 			},
+			{
+				name: "个人名片",
+				url: "https://me.grushtom.com/",
+				external: true,
+				icon: "material-symbols:contact-page",
+			}
 		],
 	});
 

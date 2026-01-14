@@ -16,8 +16,8 @@ export const announcementConfig: AnnouncementConfig = {
 		// 链接文本
 		text: "了解更多",
 		// 链接 URL
-		url: "/about/",
+		url: "https://me.grushtom.com/",
 		// 内部链接
-		external: false,
+		external: true,
 	},
 };
