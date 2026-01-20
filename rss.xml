@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>GrushTomの部屋</title><description>Firefly</description><link>https://grushtom.github.io/</link><language>zh_CN</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年1月20日 12:15:07</lastBuildDate><item><title>Hexo+GithubPages部署博客</title><link>https://grushtom.github.io/posts/hexo/</link><guid isPermaLink="true">https://grushtom.github.io/posts/hexo/</guid><description>深入了解如何使用Hexo框架+Github Pages搭建一个属于你的个人博客，新手必看系列</description><pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;使用HEXO + Github Pages搭建个人博客&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>GrushTomの部屋</title><description>Firefly</description><link>https://grushtom.github.io/</link><language>zh_CN</language><templateTheme>Firefly</templateTheme><templateThemeVersion>6.3.7</templateThemeVersion><templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl><lastBuildDate>2026年1月20日 12:17:45</lastBuildDate><item><title>Hexo+GithubPages部署博客</title><link>https://grushtom.github.io/posts/hexo/</link><guid isPermaLink="true">https://grushtom.github.io/posts/hexo/</guid><description>深入了解如何使用Hexo框架+Github Pages搭建一个属于你的个人博客，新手必看系列</description><pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;使用HEXO + Github Pages搭建个人博客&lt;/h1&gt;
 &lt;h2&gt;功能特点&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;无需服务器&lt;/li&gt;
@@ -459,6 +459,44 @@ slug: how-to-use-firefly-blog-theme
 &lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded><author>GrushTom</author></item><item><title>图片裂图？图床链接失效？你一定得知道的补救措施！</title><link>https://grushtom.github.io/posts/measure-url-picbed/</link><guid isPermaLink="true">https://grushtom.github.io/posts/measure-url-picbed/</guid><description>图片裂图链接无法生效，看完教程你直接顿悟！</description><pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;图片裂图？图床链接失效？你一定得知道的补救措施！&lt;/h1&gt;
+&lt;p&gt;今天在使用 Markdown 发布文章时，突然发现上传到&lt;strong&gt;图床图片裂图&lt;/strong&gt;（即图片无法正常加载）&lt;br /&gt;
+头脑风暴后发现问题所在&lt;/p&gt;
+&lt;h2&gt;开启了IUAM?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在使用 Cloudflare 等服务时开启了&quot;I&apos;m Under Attack Mode&quot;&lt;/strong&gt;（IUAM）&lt;br /&gt;
+那么你的图片就会被 &lt;strong&gt;Cloudflare 的防火墙&lt;/strong&gt;拦截导致无法显示，此时你若直接打开&lt;strong&gt;图床提供的链接&lt;/strong&gt; 就会如图所示进入到5秒盾质询&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.grushtom.com/file/1768907314771_image.png&quot; alt=&quot;image.png&quot; /&gt;
+聪明的你立刻想到，一定是&lt;strong&gt;质询界面&lt;/strong&gt;影响了图片读取！&lt;/p&gt;
+&lt;h2&gt;为什么会出现裂图？&lt;/h2&gt;
+&lt;p&gt;&quot;&lt;strong&gt;I&apos;m Under Attack Mode&lt;/strong&gt;&quot; 会对所有访问你站点的请求进行 &lt;strong&gt;JS 验证&lt;/strong&gt;，它能够防止恶意 bot 访问，但是&lt;strong&gt;不适用于 Markdown 渲染&lt;/strong&gt;的图片请求。这是因为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Markdown 渲染器无法执行 JS，导致&lt;strong&gt;无法通过 Cloudflare 的安全检查&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;如果 Cloudflare 阻止了这些请求，你的图床图片就会显示不出来，造成裂图现象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;如何不关闭IUAM加载图片？&lt;/h2&gt;
+&lt;p&gt;你不希望关闭 IUAM，但又想让图床图片正常加载，&lt;strong&gt;最简单有效的方式&lt;/strong&gt;就是通过 &lt;strong&gt;Cloudflare 自定义规则&lt;/strong&gt;来&lt;strong&gt;白名单你的图床链接&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;1. 创建防火墙规则&lt;/h3&gt;
+&lt;p&gt;在 Cloudflare 控制面板中，你可以为你的图床域名设置一个规则，跳过安全检查。&lt;/p&gt;
+&lt;h4&gt;步骤：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 &lt;strong&gt;Cloudflare Dashboard&lt;/strong&gt;，选择你的站点。&lt;/li&gt;
+&lt;li&gt;进入 &lt;strong&gt;Security&lt;/strong&gt; &amp;gt; &lt;strong&gt;Security Rules&lt;/strong&gt; &amp;gt; &lt;strong&gt;自定义规则&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;添加规则 自定义规则&lt;/strong&gt;。
+&lt;img src=&quot;https://img.grushtom.com/file/1768908137737_image.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;规则配置：&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;解释一下&lt;/strong&gt;
+主机名值 填写自己的图床地址 &lt;strong&gt;如：xxx.xxx.com&lt;/strong&gt;
+URI路径选择包括 填写自己的文件存储目录 &lt;strong&gt;如：xxx.xxx.com/file/xxxxxx.png&lt;/strong&gt;那么就填写 */file/*即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.grushtom.com/file/1768908341406_image.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;验证
+无痕窗口测试：直接在浏览器中访问图片 URL，确保图片能够加载。
+&lt;strong&gt;Edge中 Ctrl+Shift+N快速开启无痕窗口&lt;/strong&gt;
+Markdown 测试：在博客中插入图片并查看效果。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://img.grushtom.com/file/1768904958375_ticket.png&quot; alt=&quot;Test Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;这样，你就能兼顾安全性和图床的可用性，无需妥协。&lt;/p&gt;
 </content:encoded><author>GrushTom</author></item><item><title>Firefly 布局系统详解</title><link>https://grushtom.github.io/posts/firefly-layout-system/</link><guid isPermaLink="true">https://grushtom.github.io/posts/firefly-layout-system/</guid><description>深入了解 Firefly 的布局系统，包括侧边栏布局（左侧/双侧）和文章列表布局（列表/网格），以及全新的三列网格模式。</description><pubDate>Sat, 03 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;📖 概述&lt;/h2&gt;
 &lt;p&gt;Firefly 提供了灵活的布局系统，允许您根据内容需求和个人喜好自定义博客的视觉呈现方式。布局系统主要包括&lt;strong&gt;侧边栏布局&lt;/strong&gt;和&lt;strong&gt;文章列表布局&lt;/strong&gt;两个维度，它们相互配合，共同决定了页面的整体结构。&lt;/p&gt;
 &lt;p&gt;本文将详细介绍 Firefly 的各种布局模式、它们的特点、使用场景，以及不同布局组合的效果。&lt;/p&gt;
