@@ -71,9 +71,7 @@ let pageTitle: string;
 if (title) {
 	pageTitle = `${title} - ${siteConfig.title}`;
 } else {
-	pageTitle = siteConfig.subtitle
-		? `${siteConfig.title} - ${siteConfig.subtitle}`
-		: siteConfig.title;
+	pageTitle = siteConfig.title;
 }
 
 let ogImageUrl: string | undefined;
@@ -1007,10 +1005,64 @@ function disableAnimation() {
       initWallpaperMode();
       initThemeListener();
       initIconLoader();
+      initDynamicTitle();
     });
   } else {
     initWallpaperMode();
     initThemeListener();
     initIconLoader();
+    initDynamicTitle();
+  }
+
+  // Dynamic title functionality
+  function initDynamicTitle() {
+    const originalTitle = document.title;
+    let titleTimer: number | null = null;
+
+    function resetTitle() {
+      if (titleTimer) {
+        clearTimeout(titleTimer);
+        titleTimer = null;
+      }
+      document.title = originalTitle;
+    }
+
+    function setTitleWithDelay(title: string, delay: number = 2000) {
+      if (titleTimer) {
+        clearTimeout(titleTimer);
+        titleTimer = null;
+      }
+      document.title = title;
+      titleTimer = window.setTimeout(resetTitle, delay);
+    }
+
+    function setTitlePersistent(title: string) {
+      if (titleTimer) {
+        clearTimeout(titleTimer);
+        titleTimer = null;
+      }
+      document.title = title;
+    }
+
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        setTitlePersistent("(っ °Д °;)っ主人看看机体喵！");
+      } else {
+        setTitleWithDelay("ヾ(≧▽≦*)o机体最喜欢主人啦！");
+      }
+    }
+
+    function handleFocus() {
+      setTitleWithDelay("ヾ(≧▽≦*)o机体最喜欢主人啦！");
+    }
+
+    function handleBlur() {
+      setTitlePersistent("(っ °Д °;)っ主人看看机体喵！");
+    }
+
+    // Add event listeners
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("blur", handleBlur);
   }
 </script>
