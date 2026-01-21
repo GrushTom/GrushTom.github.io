@@ -5,7 +5,7 @@ export const fontConfig = {
 	// 是否预加载字体文件
 	preload: true,
 	// 当前选择的字体，支持多个字体组合
-	selected: ["system"],
+	selected: ["uranus-pixel", "system"],
 
 	// 字体列表
 	fonts: {
@@ -53,6 +53,16 @@ export const fontConfig = {
 			src: "https://unpkg.com/misans@4.1.0/lib/Normal/MiSans-Semibold.min.css",
 			family: "MiSans",
 			weight: 600,
+			display: "swap" as const,
+		},
+
+		// 像素字体 - Uranus Pixel
+		"uranus-pixel": {
+			id: "uranus-pixel",
+			name: "Uranus Pixel",
+			src: "/assets/fonts/Uranus_Pixel_11Px.ttf",
+			family: "Uranus Pixel",
+			format: "truetype",
 			display: "swap" as const,
 		},
 	},

@@ -11,7 +11,7 @@ tags:
 category: 文章示例
 draft: false
 lang: ""
-pinned: true
+pinned: false
 ---
 
 # 使用HEXO + Github Pages搭建个人博客
