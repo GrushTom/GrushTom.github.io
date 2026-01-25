@@ -54,7 +54,7 @@ export const coverImageConfig: CoverImageConfig = {
 		 */
 		watermark: {
 			// 水印开关
-			enable: true,
+			enable: false,
 			// 水印文本
 			text: "Random Cover",
 			/**

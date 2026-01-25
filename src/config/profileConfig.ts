@@ -2,7 +2,7 @@ import type { ProfileConfig } from "../types/config";
 
 export const profileConfig: ProfileConfig = {
 	// 头像
-	avatar: "/assets/images/avatar.webp",
+	avatar: "https://q1.qlogo.cn/g?b=qq&nk=2114223063&s=640",
 
 	// 名字
 	name: "GrushTom",
