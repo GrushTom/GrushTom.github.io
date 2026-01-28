@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Firefly",
 
 	// 站点 URL
-	site_url: "https://grushtom.github.io/",
+	site_url: "https://blog.grushtom.com/",
 
 	// 站点描述
 	description:
